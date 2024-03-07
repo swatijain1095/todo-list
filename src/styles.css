@@ -6,3 +6,30 @@
 .todo-list {
   list-style: none;
 }
+
+.todo-item {
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid black;
+}
+
+.todo-item > div {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-item > div > div {
+  display: flex;
+  gap: 10px;
+}
+
+.todo-item .title {
+  text-align: left;
+  margin: 5px;
+}
+
+.todo-item .btn {
+  outline: inherit;
+}

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TodoList from "./TodoList";
 import "./styles.css";
 
@@ -38,6 +38,10 @@ export default function App() {
   //   completed: false
   // }
   // ];
+
+  useEffect(() => {
+    console.log(todoList);
+  }, [todoList]);
 
   return (
     <div className="App">
