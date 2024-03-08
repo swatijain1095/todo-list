@@ -13,10 +13,40 @@ const TodoList = ({ todoList, setTodoList }) => {
     setTodoList(todoListCopy);
   };
 
+  // DELETE
+  const handleDelete = (id) => {
+    // 1. create a copy of todolist
+    const todoListCopy = todoList.filter((item) => {
+      return id !== item.id;
+    });
+    setTodoList(todoListCopy);
+    // 3. add new list to setter function.
+  };
+  // EDIT
+  const handleEdit = (id, title) => {
+    const todoListCopy = todoList.map((item) => {
+      if (id === item.id) {
+        return {
+          ...item,
+          title,
+        };
+      } else {
+        return item;
+      }
+    });
+    setTodoList(todoListCopy);
+  };
+
   return (
     <ul className="todo-list">
       {todoList.map((todoItem) => (
-        <TodoItem handleSelect={handleSelect} {...todoItem} />
+        <TodoItem
+          handleSelect={handleSelect}
+          handleDelete={handleDelete}
+          handleEdit={handleEdit}
+          key={todoItem.id}
+          {...todoItem}
+        />
       ))}
     </ul>
   );
