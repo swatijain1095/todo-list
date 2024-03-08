@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import TodoList from "./TodoList";
 import "./styles.css";
 
+// When user checks any item then trxt should be strikedthrough
+// When there are no item in the list then show' you have completed all the items'
+// There should be an add button to add items in the list.
 export default function App() {
   const [todoList, setTodoList] = useState([
     {
